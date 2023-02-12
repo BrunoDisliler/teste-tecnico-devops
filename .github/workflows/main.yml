@@ -13,9 +13,9 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Install Dependabot
+    - name: Update dependencies
       run: |
-        npm install -g @dependabot/cli
-
-    - name: Trigger Dependabot
-      run: npx dependabot schedule --labels=bug,security --interval=daily --time=09:00
+        apt-get update
+        apt-get install -y npm
+        npm install -g dependabot-core
+        dependabot-core schedule
