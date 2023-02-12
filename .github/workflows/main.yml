@@ -1,4 +1,4 @@
-name: CI/CD with Dependabot
+name: CI/CD
 
 on:
   push:
@@ -13,10 +13,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Run Dependabot
-      uses: dependabot/actions/dependabot-core@v2
+    - name: Trigger Dependabot
+      uses: dependabot/actions/dependabot-alert@v3
       with:
-        args: create
-
-    - name: Create pull request
-      uses: dependabot/actions/dependabot-pull-request@v2
+        schedule-interval: 'daily'
+        labels: bug,security
+        auto-merge: false
+        auto-merge-prefix: '[Auto merge]'
+        schedule-time: '09:00'
+        notify-dependents: true
+        repository-dispatch: false
