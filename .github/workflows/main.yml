@@ -15,9 +15,7 @@ jobs:
 
     - name: Install Dependabot
       run: |
-        echo "::add-path::$GITHUB_WORKSPACE/bin"
-        echo "::add-path::$GITHUB_WORKSPACE/node_modules/.bin"
         npm install -g @dependabot/cli
 
     - name: Trigger Dependabot
-      run: dependabot schedule --labels=bug,security --interval=daily --time=09:00
+      run: npx dependabot schedule --labels=bug,security --interval=daily --time=09:00
