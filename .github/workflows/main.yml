@@ -1,0 +1,22 @@
+name: CI/CD with Dependabot
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Run Dependabot
+      uses: dependabot/actions/dependabot-core@v2
+      with:
+        args: create
+
+    - name: Create pull request
+      uses: dependabot/actions/dependabot-pull-request@v2
