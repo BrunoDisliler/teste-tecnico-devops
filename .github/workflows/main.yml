@@ -13,11 +13,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Install Dependabot
+      run: |
+        echo "::add-path::$GITHUB_WORKSPACE/bin"
+        echo "::add-path::$GITHUB_WORKSPACE/node_modules/.bin"
+        npm install -g @dependabot/cli
+
     - name: Trigger Dependabot
-      uses: docker://dependabot/action-launcher:v1
-      with:
-        args: schedule
-        labels: bug,security
-        schedule-interval: daily
-        schedule-time: 09:00
-        notify-dependents: true
+      run: dependabot schedule --labels=bug,security --interval=daily --time=09:00
