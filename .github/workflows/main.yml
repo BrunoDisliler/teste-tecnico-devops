@@ -14,12 +14,10 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Trigger Dependabot
-      uses: dependabot/actions/dependabot-alert@v3
+      uses: docker://dependabot/dependabot-core:v1
       with:
-        schedule-interval: 'daily'
+        args: schedule
         labels: bug,security
-        auto-merge: false
-        auto-merge-prefix: '[Auto merge]'
-        schedule-time: '09:00'
+        schedule-interval: daily
+        schedule-time: 09:00
         notify-dependents: true
-        repository-dispatch: false
