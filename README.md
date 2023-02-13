@@ -12,3 +12,4 @@ The most flexible and standards-compliant OpenID Connect and OAuth 2.x framework
 * [Install](https://www.microsoft.com/net/download/core#/current) the [required](https://github.com/DuendeSoftware/IdentityServer/blob/main/global.json) .NET Core SDK
 * Run `build.ps1` or `build.sh` in the root of the cloned repo
 
+
