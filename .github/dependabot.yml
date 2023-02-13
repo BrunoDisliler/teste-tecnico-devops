@@ -5,15 +5,13 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm"
+  - package-ecosystem: "nuget" 
+    directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-    directory: "/"
-    labels:
-      - "dependencies"
-    ignore:
-      - path: "package-name"
-    opens-pull-request-if-necessary: true
-    rebase-strategy: "auto"
 
+  - package-ecosystem: "github-actions" 
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "daily"
 
