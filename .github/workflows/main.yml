@@ -1,4 +1,4 @@
-name: Dependabot Updater
+name: Dependabot Alert
 
 on:
   push:
@@ -6,12 +6,16 @@ on:
       - master
 
 jobs:
-  dependabot-updater:
+  update:
+    name: Update Dependencies
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3.3.0
+    - name: Checkout Code
+      uses: actions/checkout@v3
 
-    - name: Update dependencies
-      uses: dependabot/updater-action@v2
+    - name: Update Dependencies
+      uses: dependabot/updater-action@v3
+      with:
+        schedule: daily
+        node-version: 16
