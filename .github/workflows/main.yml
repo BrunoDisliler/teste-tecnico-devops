@@ -15,7 +15,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Update Dependencies
-      uses: dependabot/updater-action@v3
+      uses: dependabot/updater-action@v2
       with:
         schedule: daily
         node-version: 16
