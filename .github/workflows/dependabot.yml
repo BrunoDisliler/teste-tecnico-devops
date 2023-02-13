@@ -1,0 +1,19 @@
+name: Dependabot
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Run Dependabot
+      uses: dependabot/actions/run-dependabot@v2
+      with:
+        api-token: ${{ secrets.GITHUB_TOKEN }}
