@@ -11,9 +11,7 @@ updates:
     directory: "/"
     labels:
       - "dependencies"
-    only:
-      branches:
-        - master
+
 
     
 
