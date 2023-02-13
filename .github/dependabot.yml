@@ -3,15 +3,18 @@
 # Please see the documentation for all configuration options:
 # https://help.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 
-
 version: 2
 updates:
   - package-ecosystem: "npm"
     schedule:
-      - interval: "daily"
+      interval: "daily"
     directory: "/"
-    schedule-ignore:
-      paths:
-        - "dependabot.yml"
-        - "node_modules/"
+    schedule-at: "03:00"
+    labels:
+      - "dependencies"
+    ignore:
+      - "package-name"
+    opens-pull-request-if-necessary: true
+    rebase-strategy: "rebase"
+    post-hook: "npm ci && npm test"
 
