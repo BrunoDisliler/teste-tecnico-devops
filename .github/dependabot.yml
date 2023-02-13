@@ -5,23 +5,16 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm" 
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "npm"
     schedule:
       interval: "daily"
-    schedule-expression: "after 5 pm UTC"
+    directory: "/"
     labels:
-      - "dependecies"
-    automerge: true
-    merge-method: "rebase"
-    approval-strategy: "auto"
-    types:
-      - security
-      - bugfix
-      - enhancement
+      - "dependencies"
     only:
       branches:
         - master
+
     
 
   - package-ecosystem: "github-actions" 
