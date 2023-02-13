@@ -5,7 +5,6 @@ The most flexible and standards-compliant OpenID Connect and OAuth 2.x framework
 
 [Web site](https://duendesoftware.com/products/identityserver) and [documentation](https://docs.duendesoftware.com)
 
-
 ## How to build
 
 * Install Git
