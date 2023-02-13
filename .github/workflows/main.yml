@@ -1,4 +1,4 @@
-name: CI/CD with Dependabot
+name: Dependabot Updater
 
 on:
   push:
@@ -6,17 +6,12 @@ on:
       - master
 
 jobs:
-  build:
+  dependabot-updater:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3.3.0
 
-    - name: Run Dependabot
-      uses: dependabot/actions/dependabot-core@v2
-      with:
-        args: create
-
-    - name: Create pull request
-      uses: dependabot/actions/dependabot-pull-request@v2
+    - name: Update dependencies
+      uses: dependabot/updater-action@v2
