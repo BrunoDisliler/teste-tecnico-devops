@@ -5,7 +5,7 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm"
+  - package-ecosystem: "nuget"
     schedule:
       interval: "daily"
     target-branch: "master"
