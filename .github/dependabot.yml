@@ -13,6 +13,7 @@ updates:
       - "dependencies"
     schedule-expression: "on a daily basis"
     email-preference: "always"
-    branches:
-      only:
-        - master
+    on:
+      push:
+        branches:
+          - master
